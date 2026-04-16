@@ -1,0 +1,1412 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,79.4,100..900;1,79.4,100..900&display=swap');
+
+
+/* Reset basic browser styles */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* The main navigation bar container */
+
+.nav {
+       background-color:white;
+    padding: 15px 0;
+    }
+    
+    /* Add a new rule specifically for the row inside the navbar */
+.nav .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+   
+    
+
+/* Logo styling */
+.logo a {
+    color:black;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo .logo-img {
+    width: 32px; /* Change this to make the logo bigger or smaller */
+    height: auto; /* Ensures the image doesn't get stretched or squished */
+    margin-right: 12px; /* Creates space between the image and the word "Treact" */
+    transform: translateY(6px);
+}
+
+
+
+
+
+
+
+
+
+
+/* Navigation links container */
+.nav-links {
+    list-style: none; /* Removes the bullet points */
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Adds space between each link */
+}
+
+/* Individual link styling */
+.nav-links li a {
+    color:black;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+/* Styling the Sign Up link to look like a button */
+.nav-links  .btn-signup {
+    background-color: #007bff; /* A nice, bright blue */
+    color: #ffffff; /* White text so it stands out */
+    text-decoration: none; /* Removes the default blue underline */
+    
+    /* PADDING: 10px top/bottom, 24px left/right */
+    padding: 10px 24px; 
+    
+    /* BORDER-RADIUS: This creates the circular/pill edges */
+    border-radius: 50px; 
+    
+    
+    /* DISPLAY: Important for links so the padding works correctly */
+    display: inline-block; 
+    
+    /* Smooth transition for the hover effect */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Make it look interactive when the user hovers over it */
+.btn-signup:hover {
+    background-color:#5e18e9; /* Changes to a darker blue */
+    transform: translateY(-2px); /* Makes the button "lift" up slightly */
+}
+
+/* Hover effect for the links */
+.nav-links li a:hover {
+    color: #4c78af; /* Changes to a nice green when you hover */
+}
+
+/* Menu Backdrop */
+
+.btn_menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #6496db;
+   display: none; 
+
+}
+
+.menu_backdrop{
+    position: absolute;
+    background-color: #242424;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu_backdrop{
+
+display: flex;
+visibility: visible;
+opacity: 1;
+
+}
+
+.menu--open{
+height: 100vh;
+overflow: hidden;
+
+}
+.menu_links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu_list{
+    padding: 32px;
+}
+
+.menu_link{
+    font-size: 40px;
+    color: white;
+}
+
+.btn_menu-closed{
+    position: absolute;
+right: 20px;
+top: 10px;
+padding: 8px;
+color: white;
+}
+
+
+/*HERO SECTION SPECIFIC STYLES
+   ======================================== */
+#hero {
+    /* Put top/bottom padding here so the breathing room stays outside the row */
+    padding: 80px 0; 
+}
+
+.hero-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 24px; /* Keeps the text from touching the edge of mobile screens */
+    gap: 60px; 
+    
+}
+
+.hero-content {
+    flex: 4; 
+    display: flex;  
+    flex-direction: column;
+}
+
+.hero-title {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.blue{
+    color:#5e18e9;
+}
+
+.hero-intro {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   4. HERO RESPONSIVENESS (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Stacks the image on top of the text */
+        text-align: center; /* Centers text for mobile */
+        gap: 40px;
+    }
+    
+    .hero-content, .hero-image {
+        flex: none; /* Removes the 40/60 split */
+        width: 100%; /* Forces both sides to take full width */
+    }
+    
+    .hero-title {
+        font-size: 36px; /* Makes the heading fit better on phones */
+    }
+}
+
+/* The Rounded Email Bar */
+.email-bar {
+    display: flex;
+    background-color: #f4f5f7; /* Light grey background for the whole bar */
+    border-radius: 50px; /* Makes the entire bar a rounded pill shape */
+    padding: 6px; /* Space between the outer edge and the button */
+    border: 1px solid #e0e0e0;
+    margin-bottom: 40px;
+}
+
+.email-input {
+    flex: 1; /* Tells the input to take up all remaining space */
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    outline: none; /* Removes the blue glow when clicked */
+}
+
+.submit-btn {
+    background-color: #5e18e9; /* Your signature green! */
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 50px; /* Matches the rounded look of the bar */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #545883;
+}
+
+/* Trusted Customers Section */
+.trusted-customers p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.customer-icons {
+    display: flex;
+    gap: 24px;
+    font-size: 32px;
+    color: #a0a0a0; /* Soft grey icons */
+}
+
+
+
+.hero-image {
+    flex: 6; 
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Adds a nice professional drop shadow */
+}
+
+
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Phones)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column-reverse; /* Stacks them and puts the image on top! */
+        padding: 40px 24px;
+        gap: 40px;
+    }
+    
+    .hero-content, .hero-image {
+        flex: none;
+        width: 100%; /* Resets widths to 100% on small screens */
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+}
+
+/* =========================================
+   SERVICES SECTION
+   ========================================= */
+#services-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    
+}
+
+/* Header Styling */
+.services-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto; /* Centers the header text and adds space below it */
+}
+
+.small-heading {
+    display: block;
+    color:#5e18e9; /* Your signature blue */
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.big-heading {
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.services-intro {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* The CSS Grid Setup */
+.services-grid {
+    display: grid;
+    /* This creates exactly 3 equal columns! */
+    grid-template-columns: repeat(3, 1fr); 
+    /* This creates a 40px gap between rows and a 30px gap between columns */
+    gap: 40px 30px; 
+}
+
+/* Individual Service Cards */
+.service-card {
+    text-align: center;
+    padding: 24px;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly when hovered */
+}
+
+.service-icon {
+    font-size: 48px;
+    color: #5e18e9;
+    margin-bottom: 24px;
+}
+
+.service-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.service-desc {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVE QUERIES (Mobile & Tablet)
+   ========================================= */
+
+/* Tablets (Screens 900px and smaller) */
+@media (max-width: 900px) {
+    .services-grid {
+        /* Switch from 3 columns to 2 columns */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .big-heading {
+        font-size: 32px;
+    }
+}
+
+/* Phones (Screens 600px and smaller) */
+@media (max-width: 600px) {
+    .services-grid {
+        /* Switch to 1 single column stacking vertically */
+        grid-template-columns: 1fr; 
+    }
+    
+    .services-header {
+        margin-bottom: 40px;
+    }
+}
+
+/* =========================================
+   PROFESSIONALS SECTION
+   ========================================= */
+#professionals-section {
+    padding: 100px 0; /* Generous vertical padding */
+    background-color: #ffffff; /* White background */
+}
+
+/* Specific flex container behavior for this row */
+.row-professionals {
+    display: flex;
+    align-items: center; /* Vertically centers the text against the image */
+    justify-content: space-between;
+    gap: 80px; /* Space between the illustration and the text */
+    padding: 0 24px; /* Global side padding for mobile safety */
+}
+
+/* =========================================
+   LEFT portion (Illustration)
+   ========================================= */
+.pros-image-wrapper {
+    flex: 1; /* Takes up exactly 50% of the row */
+    display: flex;
+    justify-content: center;
+}
+
+.img-design {
+    width: 100%;
+    max-width: 450px; /* Prevents the illustration from getting too huge */
+    height: auto;
+}
+
+/* =========================================
+   RIGHT portion (Content)
+   ========================================= */
+.pros-content {
+    flex: 1; /* Takes up exactly 50% of the row */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns all text and button to the left */
+}
+ 
+
+.pros-big-heading {
+    font-size: 44px;
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.pros-paragraph {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* The Blue "Learn more" Button */
+.btn-learn-more {
+    display: inline-block;
+    background-color: #007bff; /* Bright professional blue */
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 50px; /* Rounded 'pill' shape */
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 123, 255, 0.3); /* Soft blue shadow */
+}
+
+.btn-learn-more:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lifts slightly */
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .row-professionals {
+        flex-direction: column; /* Stacks image on TOP of text */
+        gap: 50px;
+        text-align: center;
+    }
+    
+    .pros-content {
+        align-items: center; /* Centers text and button on mobile */
+    }
+
+    .pros-big-heading {
+        font-size: 32px;
+    }
+}
+
+/* =========================================
+   HOW IT WORKS (STEPS) SECTION
+   ========================================= */
+#steps-section {
+    padding: 100px 0; 
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+/* Specific flex behavior for this 50/50 row */
+.row-split {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 60px; /* Space between the text column and the image */
+    padding: 0 24px; /* Global side padding for mobile safety */
+}
+
+/* =========================================
+   LEFT portion (Text Content)
+   ========================================= */
+.split-content {
+    flex: 1; /* Takes up 50% of the horizontal space */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.split-heading {
+    font-size: 40px;
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 40px; /* Big gap before the steps start */
+}
+
+/* --- The Numbered Steps Styling --- */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Adds breathing room between each step */
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start; /* Aligns the icon with the top of the text */
+    gap: 20px; /* Space between the icon circle and the text */
+}
+
+.step-icon {
+    /* This creates the big gray circular icons */
+    background-color: #e4e6eb; /* Soft gray background */
+    color: #888; /* Darker gray number */
+    font-size: 24px;
+    font-weight: 900;
+    
+    /* Perfect Circle Math */
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    
+    /* Centers the number perfectly inside the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* CRITICAL: Prevents the circle from squishing into an oval on small screens */
+    flex-shrink: 0; 
+}
+
+.step-title {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.step-desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* =========================================
+   RIGHT portion (Image Column)
+   ========================================= */
+.split-image {
+    flex: 1; /* Takes up 50% of the horizontal space */
+}
+
+.split-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; 
+    display: block;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08); /* Soft drop shadow */
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .row-split {
+        flex-direction: column-reverse; /* Stacks image on TOP of the steps on mobile */
+        gap: 50px;
+    }
+    
+    .split-heading {
+        font-size: 32px;
+    }
+}
+
+/*VALUES SECTION*/
+
+  /*Individual Block (affords spacing between the two paras) */
+.principle-block {
+    margin-bottom: 30px; /* Space below the first paragraph block */
+}
+
+/* 3. Header Area (Icon + Heading) */
+.principle-header {
+    display: flex; /* Puts icon and heading in a single row */
+    align-items: center; /* Centers them vertically against each other */
+    margin-bottom: 12px; /* Space between header and paragraph text */
+}
+
+/* 4. Base Icon Styling (the 'Circle') */
+.icon {
+    display: flex; /* Allows centering the character ($ or 💼) inside the circle */
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    width: 40px; /* Diameter of the circle */
+    height: 40px; /* Diameter of the circle */
+    border-radius: 50%; /* Makes the rectangle a perfect circle */
+    margin-right: 15px; /* Space between the circle and the text */
+    font-size: 1.2rem; /* Size of the character inside the circle */
+    font-weight: bold;
+}
+
+/* 5. Specific Icon Colors */
+
+/* Lavender shaded ($) icon */
+.icon-affordable {
+    background-color: #c1f4c9; /* Lavender background */
+    color: #4B0082; /* Deep Indigo text color for contrast */
+}
+
+/* Bluish shaded (briefcase) icon */
+.icon-professional {
+    background-color: #eb9447; /* Light bluish/cyan background */
+    /* Briefcase emoji uses its own natural colors, color property not needed */
+}
+
+/* 6. Typography Styling */
+.principle-heading {
+    margin: 0; /* Removes default browser margins so Flexbox alignment works */
+    font-size: 1.5rem;
+    color: #333; /* Dark gray for the heading */
+    font-weight: 600;
+}
+
+.principle-text {
+    margin: 0 0 0 55px; /* Aligns the text under the heading, not under the icon (40px icon + 15px margin) */
+    font-size: 1rem;
+    color: #555; /* Slightly lighter gray for the body text */
+    line-height: 1.6; /* Increases line spacing for easy reading */
+}
+
+/* --- Responsive adjustment for mobile --- */
+@media (max-width: 600px) {
+    .principle-text {
+        margin: 0; /* On small screens, let text wrap back under the icon */
+        padding-top: 10px;
+    }
+} 
+
+.btn-learn-more {
+    /* Sizing & Spacing */
+    display: inline-block;
+    padding: 12px 28px;
+    margin-top: 10px;
+    
+    /* Colors */
+    background-color: #2563eb; /* Vibrant blue */
+    color: #ffffff; /* White text */
+    
+    /* Typography */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none; /* Removes the underline from the link */
+    
+    /* The Rounded Shape */
+    border-radius: 50px; /* High number forces the rounded pill shape */
+    
+    /* Smooth hover animation */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.btn-learn-more:hover {
+    background-color: #1d4ed8; /* Slightly darker blue when hovered */
+    transform: translateY(-2px); /* Lifts the button up slightly */
+}
+
+/* NEW PRICE CARDS*/
+
+/* Universal Box Sizing based on your copied styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Base Layout with Supervisor's Exact Font and Base Color */
+.pricing-section {
+  position: relative;
+  padding: 80px 20px;
+  /* Applied exact font family */
+  font-family: Inter, system-ui, sans-serif; 
+  /* Applied exact text color */
+  color: rgb(36, 62, 99); 
+  background-color: #f9f9f9;
+  overflow: hidden; 
+  line-height: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; 
+}
+
+/* Header Styling */
+.pricing-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+}
+
+.subheading {
+  color: #443ee5;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  /* Kept the supervisor's exact color for the heading */
+  color: rgb(36, 62, 99); 
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #3e4ce5;
+}
+
+.description {
+  /* Using a slightly muted opacity of the supervisor's color for the description */
+  color: rgba(36, 62, 99, 0.8); 
+  line-height: 1.6;
+}
+
+/* Pricing Cards Layout */
+.plans-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual Card Styling */
+.plan-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 10px 30px rgba(36, 62, 99, 0.08); /* Adjusted shadow to match brand color */
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-plan {
+  transform: scale(1.05); 
+  border: 2px solid #3e5fe5;
+  box-shadow: 0 15px 40px rgba(229, 62, 62, 0.15);
+  background-color: rgb(19, 100, 170);
+  color: white;
+
+}
+
+.plan-highlight-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #FFB4BC, #e53e3e);
+}
+
+.P{
+     background: linear-gradient(90deg, #b0f2de, #55e0b2);
+}
+
+
+
+/* Card Content Styling */
+.plan-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: rgb(36, 62, 99);
+  margin-bottom: 15px;
+}
+
+
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgb(36, 62, 99);
+  margin-bottom: 5px;
+}
+
+.duration {
+  color: rgba(36, 62, 99, 0.6);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.B{
+    color: white;
+}
+
+.feature {
+  color: rgba(36, 62, 99, 0.8);
+}
+
+.main-feature {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(226, 232, 240); /* Matched your exact border-color from the inspect tool */
+  margin-bottom: 5px;
+}
+
+/* Button Styling */
+.buy-button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  border: 2px solid #e53e3e;
+  background: transparent;
+  color: #e53e3e;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Pbtn{
+    background: linear-gradient(to right, #63d4be, #88baa8);
+    border: none;
+    color:white;
+}
+
+.Ebtn{
+    background: linear-gradient(to right, #ca9a5a, #de791b);
+    border: none;
+    color:white;
+}
+
+.buy-button:hover {
+  background: #e53e3e;
+  color: white;
+}
+
+.buy-button.primary {
+  background: #f4f0f0;
+  color: rgb(64, 70, 234);
+}
+
+.buy-button.primary:hover {
+  background: #c53030;
+  border-color: #c53030;
+}
+
+/* Decorative SVG Blob */
+.decorator-blob {
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  z-index: 0; 
+  opacity: 0.5;
+  pointer-events: none; 
+}
+
+/* Responsive formatting for mobile devices */
+@media (max-width: 900px) {
+  .plans-container {
+    flex-direction: column;
+  }
+  .featured-plan {
+    transform: scale(1); 
+  }
+}
+
+/* New Mobile Cards */
+
+/* --- BASE TYPOGRAPHY & COLORS --- */
+:root {
+  --primary-purple: #4f46e5; /* Deep bluish-purple */
+  --light-purple: #e0e7ff; 
+  --text-dark: #1f2937;
+  --text-gray: #4b5563;
+  --gray-bg: #f3f4f6; /* For the circular arrows */
+  --star-gold: #f59e0b;
+}
+
+.testimonials-section {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- THE 50/50 ROW LAYOUT --- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px; /* Space between the left and right halves */
+  align-items: stretch; /* Makes both columns equal height */
+}
+
+/* Calculate 50% width minus half the gap space */
+.col-half {
+  flex: 1 1 calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- LEFT SIDE: Image --- */
+.image-container {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.testimonial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image fills the space without stretching */
+  min-height: 400px; /* Prevents image from shrinking too much */
+}
+
+/* --- RIGHT SIDE: The 30/70 Split --- */
+.content-top {
+  flex: 0 0 30%; /* Forces this container to take exactly 30% of the height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 0px;
+}
+
+.content-bottom {
+  flex: 0 0 70%; /* Forces this container to take exactly 70% of the height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes the arrows to the bottom */
+}
+
+/* --- TEXT STYLING --- */
+.sub-heading {
+  color: var(--primary-purple);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin-top: 0;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.description {
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+/* --- SLIDER & TESTIMONIAL STYLING --- */
+.slider-wrapper {
+  position: relative;
+  flex-grow: 1; /* Takes up available space above the arrows */
+}
+
+.slide {
+  background-color: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Soft, professional shadow */
+}
+
+/* Visibility classes for React to toggle later */
+.active-slide {
+  display: block;
+}
+
+.hidden-slide {
+  display: none;
+}
+
+.stars {
+  color: var(--star-gold);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.slide-heading {
+  font-size: 1.2rem;
+  color: var(--primary-purple);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.slide-text {
+  color: var(--text-gray);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.author-name {
+  display: block;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.author-company {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+/* --- CIRCULAR ARROWS --- */
+.slider-controls {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.arrow-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--gray-bg);
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background-color: var(--primary-purple);
+  color: #ffffff;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES (Mobile) --- */
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column; /* Stacks the columns vertically */
+  }
+  
+  .col-half {
+    flex: 1 1 100%; /* Columns now take up 100% of the width */
+  }
+  
+  .content-top, .content-bottom {
+    flex: auto; /* Turns off the strict 30/70 split on mobile so text can flow naturally */
+  }
+  
+  .testimonial-img {
+    min-height: 250px; /* Smaller image on mobile */
+  }
+}
+
+/* Banner styles */
+        
+.banner {
+    background-color: #3b82f6; 
+    color: white;
+    padding: 80px 20px 140px; 
+    text-align: center;
+    position: relative; 
+    overflow: hidden; 
+    max-width: 1000px; /* Prevents it from touching the left/right edges */
+    margin: 60px auto 80px; /* Top margin, horizontal auto-center, Bottom margin pushes footer away! */
+    border-radius: 24px; /* Creates the rounded sticker/card corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Adds a soft drop shadow so it "floats" off the page */
+}
+
+
+        /* Heading styles */
+        .banner-heading {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            line-height: 1.2;
+            z-index: 2; /* Place content above the wave */
+            position: relative;
+        }
+
+        /* Button container and styles */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 2; /* Place content above the wave */
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px; /* Rounded corners */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        /* Orange button styles */
+        .btn-orange {
+            background-color: #f97316; /* Orange color */
+        }
+
+        .btn-orange:hover {
+            background-color: #ea580c; /* Darker orange on hover */
+            transform: scale(1.05); /* Slight upscale on hover */
+        }
+
+        /* Blue button styles */
+        .btn-blue {
+            background-color: #2563eb; /* Blue color */
+        }
+
+        .btn-blue:hover {
+            background-color: #1d4ed8; /* Darker blue on hover */
+            transform: scale(1.05); /* Slight upscale on hover */
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .banner {
+                padding: 60px 20px 100px;
+            }
+
+            .banner-heading {
+                font-size: 2.2rem;
+            }
+
+            .button-container {
+                flex-direction: column; /* Stack buttons vertically on small screens */
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%; /* Full width buttons on mobile */
+                box-sizing: border-box; /* Ensure padding is included in width */
+            }
+        }
+
+/* =========================================
+   FOOTER SECTION
+   ========================================= */
+#main-footer {
+    background-color: #0b1a30; /* A rich, deep navy blue */
+    padding: 80px 0 40px 0; /* Lots of space on top, less on bottom */
+    color: #ffffff; /* White text for contrast */
+}
+
+/* --- Top Portion: 5 Column Grid --- */
+.footer-links-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Divides into 5 equal columns */
+    gap: 20px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+}
+
+.footer-col ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #9ba4b5; /* A soft, readable grey-blue */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, padding-left 0.3s ease; /* Smooth hover animation */
+}
+
+.footer-col ul li a:hover {
+    color: #007bff; /* Bright blue on hover */
+    padding-left: 5px; /* Creates a cool "slide right" effect when hovered */
+}
+
+/* --- Middle Portion: Dividing Line --- */
+.footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Very light, slightly transparent white line */
+    margin: 40px 0; /* Space above and below the line */
+}
+
+/* --- Bottom Portion: Logo, Copyright, Socials --- */
+.footer-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    flex: 1; /* Takes up left third */
+    text-align: left;
+}
+
+.footer-logo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.footer-copyright {
+    flex: 1; /* Takes up middle third */
+    text-align: center; /* Forces the text to the dead center of the screen */
+    color: #9ba4b5;
+    font-size: 14px;
+}
+
+.footer-socials {
+    flex: 1; /* Takes up right third */
+    display: flex;
+    justify-content: flex-end; /* Pushes the icons to the far right */
+    gap: 16px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.05); /* Very subtle circle background */
+    color: #ffffff;
+    border-radius: 50%; /* Makes the background perfectly round */
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background-color: #007bff; /* Bright blue background on hover */
+    transform: translateY(-3px); /* Makes the icon lift up */
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    /* Tablet: Switch from 5 columns to 3 columns, then wrap the last 2 */
+    .footer-links-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Mobile: Stack everything into 1 single column */
+    .footer-links-row {
+        grid-template-columns: 1fr;
+        text-align: center; /* Center the links for easy tapping */
+    }
+
+    /* Stack the bottom row elements vertically */
+    .footer-bottom-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    /* Reset the flex layout so they center nicely on top of each other */
+    .footer-logo, .footer-copyright, .footer-socials {
+        flex: none;
+        text-align: center;
+        justify-content: center; /* Centers the social icons */
+    }
+}
+
+  
+
+/* =========================================
+   NAVBAR RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Hides the desktop links on mobile */
+    }
+    
+    .btn_menu {
+        display: block; /* Shows the hamburger button on mobile */
+        position: absolute;
+        right: 24px;
+        top: 18px;
+    
+    }
+}
+
+/* DESKTOP FAILSAFE */
+/* If the screen is larger than a tablet, force the mobile menu to stay hidden */
+@media (min-width: 901px) {
+    .menu_backdrop {
+        display: none !important; 
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
+/*Brief*/
+
+.feather-briefcase{
+    text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: inherit;
+    font-family: Inter, system-ui;
+    --tw-border-opacity: 1;
+    text-align: center;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    color: rgb(155 44 44 / var(--tw-text-opacity));
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    display: block;
+   /* vertical-align:middle;*/
+    height: 1.25rem;
+    width: 1.25rem;
+}
