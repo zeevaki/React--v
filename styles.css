@@ -169,6 +169,14 @@ padding: 8px;
 color: white;
 }
 
+.companies-img {
+  filter: grayscale(100%) opacity(60%); /* grayscale removes color, opacity makes it lighter */
+  max-width: 250px; /* Restrict the maximum width */
+  height: auto; /* Maintain original proportions */
+  object-fit: contain; /* Ensure it fits nicely within its box without distortion */
+
+}
+
 
 /*HERO SECTION SPECIFIC STYLES
    ======================================== */
@@ -321,110 +329,253 @@ color: white;
     }
 }
 
+
 /* =========================================
    SERVICES SECTION
    ========================================= */
-#services-section {
-    padding: 80px 0;
-    background-color: #ffffff;
-    
+
+ 
+
+
+   .ThreeColumnsWithSideImage_Container{
+   text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: inherit;
+    font-family: Inter, system-ui;
+    --tw-text-opacity: 1;
+    color: rgb(36 62 99 / var(--tw-text-opacity));
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    position: relative;
 }
 
-/* Header Styling */
-.services-header {
+/* Revert the main container back to column so the header stays on top of the cards */
+.ThreeColumnsWithSideImage_ThreeColumnContainer {
+    display: flex;
+    max-width: 1024px;
+    flex-flow: column; /* Changed back to column */
+    align-items: center; /* Centers everything vertically */
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Force the header items to stack and center perfectly */
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the h5, h2, and p inside */
+    width: 100%;
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto 60px auto; /* Centers the header text and adds space below it */
+;
 }
 
-.small-heading {
-    display: block;
-    color:#5e18e9; /* Your signature blue */
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+/* Apply the 3-column row layout ONLY to the cards */
+.services-row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: center; /* Ensures the cards are centered horizontally */
 }
 
-.big-heading {
-    font-size: 40px;
-    color: #222;
-    margin-bottom: 20px;
-    line-height: 1.2;
+/* Keep your 33.33% width for the cards */
+.AserviceCardDiv {
+    max-width: 24rem;
+    width: 33.33%; 
 }
 
-.services-intro {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.6;
-}
 
-/* The CSS Grid Setup */
-.services-grid {
-    display: grid;
-    /* This creates exactly 3 equal columns! */
-    grid-template-columns: repeat(3, 1fr); 
-    /* This creates a 40px gap between rows and a 30px gap between columns */
-    gap: 40px 30px; 
-}
 
-/* Individual Service Cards */
-.service-card {
+.ThreeColumnsWithSideImage_Description{
+    text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: Inter, system-ui;
+    box-sizing: border-box;
+    font-size: large;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    margin: 0px;
+    margin-top: 1rem;
+    max-width: 36rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.625;
+    opacity: 1;
+    color: rgb(124 139 161 / var(--tw-text-opacity));
+    width: 100%;
     text-align: center;
-    padding: 24px;
-    border-radius: 8px;
-    transition: transform 0.3s ease; /* Smooth hover animation */
 }
 
-.service-card:hover {
-    transform: translateY(-5px); /* Lifts the card slightly when hovered */
+.ThreeColumnsWithSideImage_Spacer{
+    text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: inherit;
+    font-family: Inter, system-ui;
+    --tw-text-opacity: 1;
+    color: rgb(36 62 99 / var(--tw-text-opacity));
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    margin-top: 2.5rem;
+    width: 100%;
 }
 
-.service-icon {
-    font-size: 48px;
-    color: #5e18e9;
-    margin-bottom: 24px;
+.Aservice-card{
+        text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: inherit;
+    font-family: Inter, system-ui;
+    --tw-text-opacity: 1;
+    color: rgb(36 62 99 / var(--tw-text-opacity));
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+ margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+    padding: 2rem 0.5rem;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
 }
 
-.service-title {
-    font-size: 22px;
-    margin-bottom: 12px;
-    color: #222;
+.imageContainer{
+    text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: inherit;
+    font-family: Inter, system-ui;
+    --tw-text-opacity: 1;
+    color: rgb(36 62 99 / var(--tw-text-opacity));
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    flex-shrink: 0;
+    border-radius: 9999px;
+    border-width: 1px;
+    padding: 1.25rem;
+    text-align: center;
+
 }
 
-.service-desc {
-    color: #666;
-    font-size: 16px;
-    line-height: 1.5;
+.textContainer{
+    text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: inherit;
+    font-family: Inter, system-ui;
+    --tw-text-opacity: 1;
+    color: rgb(36 62 99 / var(--tw-text-opacity));
+    text-align: left;
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.Atitle{
+        text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: Inter, system-ui;
+    --tw-text-opacity: 1;
+    color: rgb(36 62 99 / var(--tw-text-opacity));
+    text-align: left;
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.025em;
+}
+
+.Aservice-desc{
+    text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: Inter, system-ui;
+    text-align: left;
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);  
+    margin: 0px;
+    font-weight: 500;
+    line-height: 2;
+    --tw-text-opacity: 1;
+    color: rgb(124 139 161 / var(--tw-text-opacity));
+    margin-top: 1rem;
+
 }
 
 /* =========================================
-   RESPONSIVE QUERIES (Mobile & Tablet)
+   TABLET VIEW (Screens smaller than 900px)
    ========================================= */
-
-/* Tablets (Screens 900px and smaller) */
 @media (max-width: 900px) {
-    .services-grid {
-        /* Switch from 3 columns to 2 columns */
-        grid-template-columns: repeat(2, 1fr); 
+    /* Switch from 3 columns to 2 columns */
+    .AserviceCardDiv {
+        width: 50%;
     }
     
-    .big-heading {
-        font-size: 32px;
+    /* Slightly reduce the massive padding on the main container */
+    .ThreeColumnsWithSideImage_ThreeColumnContainer {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+    
+    /* Shrink the main heading a bit */
+    .ThreeColumnsWithSideImage_Heading {
+        font-size: 2.5rem;
     }
 }
 
-/* Phones (Screens 600px and smaller) */
-@media (max-width: 600px) {
-    .services-grid {
-        /* Switch to 1 single column stacking vertically */
-        grid-template-columns: 1fr; 
+/* =========================================
+   MOBILE VIEW (Screens smaller than 640px)
+   ========================================= */
+@media (max-width: 640px) {
+    /* Switch to 1 single column (stacking the cards) */
+    .AserviceCardDiv {
+        width: 100%;
+        max-width: 100%; 
     }
-    
-    .services-header {
-        margin-bottom: 40px;
+
+    /* Shrink the heading further for small phone screens */
+    .ThreeColumnsWithSideImage_Heading {
+        font-size: 2rem;
+    }
+
+    /* OPTIONAL BUT RECOMMENDED: 
+       Stack the icon on top of the text for mobile, rather than side-by-side */
+    .Aservice-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+
+    .textContainer {
+        margin-left: 0; /* Remove the left margin since it's centered now */
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .Atitle, .Aservice-desc {
+        text-align: center;
     }
 }
+
+
+
+
 
 /* =========================================
    PROFESSIONALS SECTION
