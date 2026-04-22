@@ -950,6 +950,7 @@ color: white;
   box-shadow: 0 10px 30px rgba(36, 62, 99, 0.08); /* Adjusted shadow to match brand color */
   position: relative;
   overflow: hidden;
+  width: 75%;
 }
 
 .featured-plan {
@@ -1073,7 +1074,7 @@ color: white;
   position: absolute;
   bottom: -200px;
   left: -200px;
-  z-index: 0; 
+  z-index: -1; 
   opacity: 0.5;
   pointer-events: none; 
 }
@@ -1213,6 +1214,77 @@ color: white;
   margin-bottom: 12px;
 }
 
+.A_img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999px;
+}
+
+@media (min-width:640px){
+    .A_img{
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+  
+  /* 1. Force the main container into a column */
+  .test-box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  /* 2. Force the image and text into a column */
+  .author_img {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* 3. THE FIX: Strip away any absolute positioning so it falls inline */
+  .slider-controls {
+    position: static !important; /* Forces it back into the normal document flow */
+    transform: none !important;  /* Removes any X/Y nudging from desktop */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px; /* Space between the text and the buttons */
+    gap: 15px; /* Space between the left and right arrow */
+  }
+}
+
+.author_img{
+    display: flex;
+}
+
+.author-info{
+    margin-top: 0.5rem;
+    text-align: center;
+    padding-top: 30px;
+    color: gray;
+}
+
+@media (min-width: 768px){
+    .author-info{
+    text-align:left;}
+}
+
+@media (min-width:640px ){
+    .author-info{
+        margin-left: 1.5rem;
+        margin-top: 0px;
+    }
+}
+
+.author-name{
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
 .slide-text {
   color: var(--text-gray);
   font-style: italic;
@@ -1220,24 +1292,28 @@ color: white;
   margin-bottom: 20px;
 }
 
-.author-name {
-  display: block;
-  font-weight: bold;
-  color: var(--text-dark);
-}
 
 .author-company {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-gray);
+    font-weight: 500;
+   
+}
+
+.test-box{
+    margin-top: auto;
+    display: flex;
+    flex-direction:row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
 }
 
 /* --- CIRCULAR ARROWS --- */
 .slider-controls {
   display: flex;
   gap: 15px;
-  margin-top: 5px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .arrow-btn {
@@ -1373,9 +1449,9 @@ color: white;
    FOOTER SECTION
    ========================================= */
 #main-footer {
-    background-color: #0b1a30; /* A rich, deep navy blue */
-    padding: 80px 0 40px 0; /* Lots of space on top, less on bottom */
-    color: #ffffff; /* White text for contrast */
+    background-color:rgb(100 21 255); /* A rich, deep navy blue */
+    padding: 80px 0 40px 5%; /* Lots of space on top, less on bottom */
+    color:rgb(247 250 252); /* White text for contrast */
 }
 
 /* --- Top Portion: 5 Column Grid --- */
@@ -1403,7 +1479,7 @@ color: white;
 }
 
 .footer-col ul li a {
-    color: #9ba4b5; /* A soft, readable grey-blue */
+    color: rgb(247 250 252); /* A soft, readable grey-blue */
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease, padding-left 0.3s ease; /* Smooth hover animation */
@@ -1424,87 +1500,123 @@ color: white;
 /* --- Bottom Portion: Logo, Copyright, Socials --- */
 .footer-bottom-row {
     display: flex;
+    flex-direction: column;
+    -webkit-box-align:center;
     align-items: center;
-    justify-content: space-between;
+    -webkit-box-pack:justify;
+    justify-content: justify;
+}
+
+@media(min-width: 768px){
+    .footer-bottom-row{
+        flex-direction: row;
+    }
+}
+
+
+
+/* --- Bottom Portion: Logo, Copyright, Socials --- */
+.footer-bottom-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Fixed from 'justify' */
+}
+
+@media(min-width: 768px){
+    .footer-bottom-row {
+        flex-direction: row;
+    }
 }
 
 .footer-logo {
-    flex: 1; /* Takes up left third */
-    text-align: left;
-}
-
-.footer-logo a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.footer-copyright {
-    flex: 1; /* Takes up middle third */
-    text-align: center; /* Forces the text to the dead center of the screen */
-    color: #9ba4b5;
-    font-size: 14px;
-}
-
-.footer-socials {
-    flex: 1; /* Takes up right third */
-    display: flex;
-    justify-content: flex-end; /* Pushes the icons to the far right */
-    gap: 16px;
-}
-
-.footer-socials a {
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: rgba(255, 255, 255, 0.05); /* Very subtle circle background */
-    color: #ffffff;
-    border-radius: 50%; /* Makes the background perfectly round */
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    flex: 1; /* Takes up equal space so the center text stays centered */
+    margin-bottom: 1rem; /* Added spacing for mobile */
+}  
+
+.footer-links-row, 
+.row, 
+.footer-bottom-row {
+    max-width: 1200px; /* Stops it from stretching infinitely */
+    margin-left: auto; /* Centers the container */
+    margin-right: auto;
 }
 
-.footer-socials a:hover {
-    background-color: #007bff; /* Bright blue background on hover */
-    transform: translateY(-3px); /* Makes the icon lift up */
-}
-
-/* =========================================
-   RESPONSIVE DESIGN (Mobile & Tablet)
-   ========================================= */
-@media (max-width: 900px) {
-    /* Tablet: Switch from 5 columns to 3 columns, then wrap the last 2 */
-    .footer-links-row {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px 20px;
+/* Fixed typo: min-widht to min-width */
+@media(min-width: 768px){
+    .footer-logo {
+        justify-content: flex-start;
+        margin-bottom: 0;
     }
 }
 
-@media (max-width: 600px) {
-    /* Mobile: Stack everything into 1 single column */
-    .footer-links-row {
-        grid-template-columns: 1fr;
-        text-align: center; /* Center the links for easy tapping */
-    }
+.img-footer {
+    width: 2rem;
+}
 
-    /* Stack the bottom row elements vertically */
-    .footer-bottom-row {
-        flex-direction: column;
-        gap: 24px;
-    }
+.footer-title {
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: rgb(247 250 252);
+}
 
-    /* Reset the flex layout so they center nicely on top of each other */
-    .footer-logo, .footer-copyright, .footer-socials {
-        flex: none;
-        text-align: center;
-        justify-content: center; /* Centers the social icons */
+.copy-rights {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(203 213 224);
+}
+
+@media(min-width: 640px){
+    .copy-rights {
+        font-size: 1rem;
     }
 }
+
+.Social-icons {
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+@media(min-width: 768px){
+    .Social-icons {
+        margin-top: 0px;
+        flex: 1; /* Takes up equal space so the center text stays centered */
+        justify-content: flex-end; /* Pushes icons to the far right */
+        padding-right: 5%;
+    }
+}
+
+.socials {
+    display: inline-flex; /* Allows centering the SVG perfectly */
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem; /* Fixed width */
+    height: 2.5rem; /* Fixed height */
+    margin-right: 1rem;
+    cursor: pointer;
+    border-radius: 50%; /* Perfect circle */
+    background-color: rgb(247 250 252);
+    color: rgb(26 32 44);
+    transition: all 300ms ease;
+}
+
+/* Removes the margin on the last icon so it aligns flush right */
+.socials:last-child {
+    margin-right: 0;
+}
+
+.socials svg {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
 
   
 
@@ -1560,4 +1672,40 @@ color: white;
    /* vertical-align:middle;*/
     height: 1.25rem;
     width: 1.25rem;
+}
+
+/* --- Base Desktop Layout (You likely already have this) --- */
+.footer-links-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    gap: 30px; /* Space between columns */
+}
+
+/* --- Tablets (Smaller screens, under 1024px) --- */
+@media (max-width: 1024px) {
+    .footer-links-row {
+        grid-template-columns: repeat(3, 1fr); /* Drops to 3 columns */
+    }
+}
+
+/* --- Mobile Phones (under 768px) --- */
+@media (max-width: 768px) {
+    .footer-links-row {
+        grid-template-columns: repeat(2, 1fr); /* Drops to 2 columns */
+    }
+}
+
+/* --- Very Small Phones (under 480px) --- */
+@media (max-width: 480px) {
+    .footer-links-row {
+        grid-template-columns: 1fr; /* Stacks into a single vertical column */
+        text-align: center; /* Centers text for a cleaner look on tiny screens */
+    }
+    
+    /* Center the unordered lists if text is centered */
+    .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
 }
