@@ -34,6 +34,13 @@
     
 
 /* Logo styling */
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
 .logo a {
     color:black;
     text-decoration: none;
@@ -50,7 +57,24 @@
 }
 
 
+/* =========================================
+   MOBILE & TABLET MEDIA QUERY (< 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* Slightly reduce the font size and spacing for mobile */
+    .logo a {
+        font-size: 20px; 
+        letter-spacing: 0.5px; 
+    }
 
+    /* Shrink the image slightly and adjust the alignment to match the new text size */
+    .logo .logo-img {
+        width: 26px; 
+        margin-right: 8px; 
+        transform: translateY(4px); 
+    }
+}
 
 
 
@@ -1356,94 +1380,200 @@ color: white;
 }
 
 /* Banner styles */
+
+.GetStarted_StyledContainer{
+    margin-bottom: 5rem;
+ position: relative; 
+ box-sizing: border-box;
+ border-width: 0px;
+ border-style: solid;
+ border-color: rgb(226 232 240);
+}
+
+.GetStarted_StyleContainer-2{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.GetStarted_BgColor1{
+    position: relative;
+    border-radius: 0.5rem;
+    --tw-bg-opacity:1;
+    background-color: rgb(100 21 255);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+}
+
+.GetStarted_Row{
+    position: relative;
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    max-width: 1024px;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align:base_line;
+    font-family: 'Roboto', sans-serif;
+}
+
+.GetStarted_ColumnContainer{
+    max-width: 32rem;
+}
+
+.GetStarted_Text{
+    font-size: 1.5rem;
+    font-weight: 700;
+    --tw-text-opacity:1;
+    color: rgb(247 250 252);
+}
+
+.GetStarted_ColumnContainer.GetStarted_LinksContainer{
+margin: top 3rem;
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 1.5rem;
+}
+
+.GetStarted_Link{
+ white-space: nowrap;
+ text-align: center;
+    border-radius: 9999px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.025rem;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 300ms;
+}
+
+.GetStarted_Link.GetStarted_PrimaryLink {
+    --tw-bg-opacity:1;
+    background-color: rgb(245 101 101);
+    --tw-text-opacity:1;
+    color: rgb(247 250 252);
+    --tw-shadow:0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px;
+    box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+} 
+
+.GetStarted_Link.GetStarted_SecondaryLink{
+    --tw-border-opacity:1;
+    border-color: rgb(160 174 192);
+    --tw-text-opacity:1;
+    color: rgb(247 250 252);
+    
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.GetStarted_DecoratorBlobContainer{
+    position:absolute;
+    inset: 0px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-radius: 0.5rem;
+}
+
+.GetStarted__DecoratorBlob1{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 20rem;
+    width: 20rem;
+    --tw-translate-x: -5rem;
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    --tw-translate-y: 8rem;
+    --tw-text-opacity: 1;
+    color: rgb(80 17 204 / var(--tw-text-opacity));
+    opacity: 0.5;  
+} 
+.GetStarted__DecoratorBlob2{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 20rem;
+    width: 20rem;
+    --tw-translate-x: 5rem;
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    --tw-translate-y: -16rem;
+    --tw-text-opacity: 1;
+    color: rgb(80 17 204 / var(--tw-text-opacity));
+    opacity: 0.5;
+}
         
-.banner {
-    background-color: #3b82f6; 
-    color: white;
-    padding: 80px 20px 140px; 
-    text-align: center;
-    position: relative; 
-    overflow: hidden; 
-    max-width: 1000px; /* Prevents it from touching the left/right edges */
-    margin: 60px auto 80px; /* Top margin, horizontal auto-center, Bottom margin pushes footer away! */
-    border-radius: 24px; /* Creates the rounded sticker/card corners */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Adds a soft drop shadow so it "floats" off the page */
+  /* =========================================
+   MOBILE & TABLET MEDIA QUERY (< 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Reduce the massive 5rem padding to save screen space */
+    .GetStarted_StyleContainer-2 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .GetStarted_BgColor1 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* 2. Stack the main content vertically and center it */
+    .GetStarted_Row {
+        flex-direction: column;
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* 3. Slightly reduce the main text size */
+    .GetStarted_Text {
+        font-size: 1.25rem;
+    }
+
+    /* 4. Stack the buttons vertically so they don't squish */
+    .GetStarted_ColumnContainer.GetStarted_LinksContainer {
+        flex-direction: column;
+        width: 100%; /* Ensures the container takes full width */
+        margin-top: 2rem;
+    }
+
+    /* Make the links stretch across the mobile screen */
+    .GetStarted_Link {
+        width: 100%; 
+    }
+
+    /* 5. Shrink the decorative blobs so they don't cover the text */
+    .GetStarted__DecoratorBlob1, 
+    .GetStarted__DecoratorBlob2 {
+        height: 12rem;
+        width: 12rem;
+        opacity: 0.25; /* Make them more transparent so text is easier to read over them */
+    }
 }
 
 
-        /* Heading styles */
-        .banner-heading {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            font-weight: bold;
-            line-height: 1.2;
-            z-index: 2; /* Place content above the wave */
-            position: relative;
-        }
 
-        /* Button container and styles */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            z-index: 2; /* Place content above the wave */
-            position: relative;
-        }
+        
+        
+       
 
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px; /* Rounded corners */
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            margin-top: 30px;
-        }
-
-        /* Orange button styles */
-        .btn-orange {
-            background-color: #f97316; /* Orange color */
-        }
-
-        .btn-orange:hover {
-            background-color: #ea580c; /* Darker orange on hover */
-            transform: scale(1.05); /* Slight upscale on hover */
-        }
-
-        /* Blue button styles */
-        .btn-blue {
-            background-color: #2563eb; /* Blue color */
-        }
-
-        .btn-blue:hover {
-            background-color: #1d4ed8; /* Darker blue on hover */
-            transform: scale(1.05); /* Slight upscale on hover */
-        }
-
-        /* Media queries for responsiveness */
-        @media (max-width: 768px) {
-            .banner {
-                padding: 60px 20px 100px;
-            }
-
-            .banner-heading {
-                font-size: 2.2rem;
-            }
-
-            .button-container {
-                flex-direction: column; /* Stack buttons vertically on small screens */
-                gap: 15px;
-            }
-
-            .btn {
-                width: 100%; /* Full width buttons on mobile */
-                box-sizing: border-box; /* Ensure padding is included in width */
-            }
-        }
+        
+               
 
 /* =========================================
    FOOTER SECTION
